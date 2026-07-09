@@ -1,0 +1,394 @@
+/* ページ全体の基本設定 */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* 柔らかいクリーム色 */
+}
+
+/* ヘッダーのデザイン */
+.header {
+    background-color: #e6b422; /* 鉛筆のような黄色 */
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* ナビゲーション全体の枠組み */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: #333;
+    /* 全体の左と右、そして上下にも線を引く */
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    /* もしメニューを中央に浮かせたい場合は width を指定してもOKです */
+    width: fit-content; 
+    margin: 0 auto; /* 中央寄せ */
+}
+
+/* 各メニューの項目 */
+nav li {
+    /* 項目ごとの右側に線を引く（これで中間の区切り線ができます） */
+    border-right: 1px solid #fff;
+}
+
+/* 一番右の項目の右線だけ消す */
+/* (全体のborder-rightと重なって太くなるのを防ぐため) */
+nav li:last-child {
+    border-right: none;
+}
+
+/* リンクのデザイン（ここは以前と同じです） */
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 15px 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #e6b422;
+    color: #333;
+}
+/* マウスを乗せた時の動き */
+nav a:hover {
+    background-color: #e6b422; /* マカえんイエローに変わる */
+    color: #333;               /* 文字を暗くして読みやすく */
+}
+
+/* メインコンテンツの幅制限 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 各セクションの見出し */
+h2 {
+    border-bottom: 2px solid #e6b422;
+    padding-bottom: 5px;
+}
+/* 名前（h2）の左側にアクセントをつける */
+h2 {
+    border-left: 8px solid #333;
+    background-color: #eee;
+    padding: 10px;
+}
+/* 画像のサイズを調整する設定 */
+.member-img {
+    width: 250px;       /* 横幅を固定 */
+    height: 250px;      /* 縦幅を固定（横幅と同じにすると正方形になります） */
+    object-fit: cover;  /* 重要！画像が縦長や横長でも、中心で綺麗に切り抜きます */
+    border-radius: 15px; /* ここを50%にすると、アイコンのように「丸く」なります */
+    border: 3px solid #e6b422; /* マカえんカラーの枠線をつけるとおしゃれ */
+    display: block;
+    margin: 10px auto;  /* 写真を中央に寄せる */
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 の比率 */
+    height: 0;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* おすすめアイテムの枠を少しおしゃれにする */
+.recommend-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.05); /* ほんのり影をつける */
+}
+
+/* おすすめコメントの文字装飾 */
+.comment {
+    font-style: italic;
+    color: #555;
+    line-height: 1.8;
+    border-top: 1px dashed #e6b422;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+/* ライブスケジュールの表のデザイン */
+.live-table {
+    width: 100%;
+    border-collapse: collapse; /* 枠線を一本にまとめる */
+    margin: 20px 0;
+}
+
+.live-table th, .live-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+
+.live-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.live-table tr:hover {
+    background-color: #fff9e6; /* マウスを乗せた時に色を変える */
+}
+
+/* 公式サイトへのリンクボタン */
+.official-link {
+    display: inline-block;
+    background-color: #e6b422;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.official-link:hover {
+    background-color: #333;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 30px;
+}
+/* アルバムの中身のレイアウト */
+.album-content {
+    display: flex;
+    align-items: flex-start; /* 上揃えに変更（文章が長い時きれいです） */
+    gap: 30px; /* 画像と文字の間隔を少し広げる */
+    margin-top: 15px;
+}
+
+/* ジャケ写のサイズを大きくする */
+.album-jacket {
+    width: 450px;  /* 150pxから250pxにアップ！ */
+    height: 450px; /* 正方形を維持 */
+    flex-shrink: 0; /* 画像が文字に押されて小さくなるのを防ぐ */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.15); /* 影を少し強くして存在感を出す */
+}
+
+/* アルバムタイトルの文字サイズも少し大きく */
+.album-text h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* スマホで見るとき（画面幅が狭い時）の調整 */
+@media (max-width: 700px) {
+    .album-content {
+        flex-direction: column; /* 縦並びにする */
+        align-items: center;    /* 中央揃え */
+        text-align: center;
+    }
+    .album-jacket {
+        width: 100%;       /* スマホでは横幅いっぱい（または最大サイズ） */
+        max-width: 300px;  /* 大きくなりすぎないように制限 */
+        height: auto;      /* 縦横比を維持 */
+    }
+}
+/* メッセージやピックアップ用の共通デザイン */
+.message, .pick-up, .official-links {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #e6b422;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* SNSボタンのデザイン（案3を選んだ場合） */
+.link-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.btn-sns {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-sns:hover {
+    background: #e6b422;
+    color: #333;
+}
+/* サイトのメインタイトル（ヘッダー内）を中央寄せ */
+.header h1, .header .subtitle {
+    text-align: center;
+}
+
+/* 各セクションの見出し（About, Lyrics, メンバー名など）を中央寄せ */
+main h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* もし以前に border-left（左の線）をつけていた場合は、
+       下線（border-bottom）に変えると中央揃えで見栄えが良くなります */
+    border-left: none; 
+    border-bottom: 3px solid #e6b422; 
+    width: fit-content; /* 文字の長さに合わせて線を引く */
+    padding: 0 20px 5px 20px;
+}
+/* アルバム名や曲名の見出しも中央にする場合 */
+.album-text h2, .recommend-item h2 {
+    text-align: center;
+}
+/* アルバムページ専用：すべてを中央に寄せる設定 */
+.album-page .album-content {
+    flex-direction: column; /* 縦並びにする */
+    align-items: center;    /* 中央揃えにする */
+    text-align: center;     /* 文字も中央寄せ */
+    gap: 15px;              /* 画像と文字の間の隙間 */
+}
+
+.album-page .album-jacket {
+    margin: 0 auto;         /* 画像を中央に配置 */
+}
+
+.album-page .album-text {
+    width: 100%;            /* テキストエリアを広げて中央にしやすくする */
+    max-width: 600px;       /* 文章が広がりすぎないように制限（読みやすさのため） */
+    margin: 0 auto;
+}
+
+/* ついでにアルバムごとの区切り線を中央にする */
+.album-page .album-item {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+}
+/* アルバムページ内のすべての段落（pタグ）を中央に寄せる */
+.album-page .album-item p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* メンバー紹介ページ全体の文字を中央に寄せる */
+.member-page .container section {
+    text-align: center;
+    margin-bottom: 50px; /* メンバーごとの間隔を少し広げる */
+}
+
+/* メンバー紹介文（pタグ）の幅を整えて中央に置く */
+.member-page section p {
+    max-width: 600px;    /* 文章が横に広がりすぎないように制限 */
+    margin-left: auto;   /* 左右オートで中央配置 */
+    margin-right: auto;
+    line-height: 1.8;    /* 行間を少し広げると読みやすくなります */
+}
+
+/* 画像も中央に寄せる（念のため） */
+.member-page .member-img {
+    display: block;
+    margin: 20px auto;
+}
+/* プロの背景テクニック：薄いチェック（方眼）柄 */
+body {
+    background-color: #fcfcfc; /* ほんの少しだけ温かみのある白 */
+    background-image: 
+        linear-gradient(rgba(230, 180, 34, 0.44) 1px, transparent 1px), /* マカえんイエローを極薄で */
+        linear-gradient(90deg, rgba(230, 180, 34, 0.07) 1px, transparent 1px);
+    background-size: 40px 40px; /* 方眼の大きさ */
+    background-attachment: fixed; /* 画面をスクロールしても背景が動かない設定（高級感が出ます） */
+}
+
+/* プロのコンテンツ浮き上がりテクニック */
+.container {
+    background-color: #ffffff; /* コンテンツ部分は真っ白にして読みやすく */
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 20px; /* 角を丸くして柔らかい印象に */
+    /* 非常に柔らかい影をつける（ふわっと浮いているように見せる） */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(230, 180, 34, 0.2); /* 縁にうっすら色をつける */
+}
+/* おすすめ曲や人気曲のイメージ画像用 */
+.recommend-item img, section > img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+/* 画像リンクナビゲーションのスタイル */
+.image-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.nav-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid #e6b422;
+    transition: transform 0.3s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-5px); /* マウスを乗せると少し浮く */
+}
+
+.nav-img-wrapper {
+    position: relative;
+    height: 150px;
+}
+
+.nav-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%); /* 文字を見やすくするために画像を少し暗くする */
+    transition: 0.3s;
+}
+
+.nav-card:hover img {
+    filter: brightness(100%); /* ホバーで明るくする */
+}
+
+.nav-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    pointer-events: none; /* 文字がクリックの邪魔をしないように */
+    white-space: nowrap;
+}
