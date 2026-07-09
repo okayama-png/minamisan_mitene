@@ -392,3 +392,13 @@ body {
     pointer-events: none; /* 文字がクリックの邪魔をしないように */
     white-space: nowrap;
 }
+.header {
+    border-bottom: none;
+}
+
+nav ul {
+    border: none;
+}
+nav {
+    margin-top: 0;
+}
